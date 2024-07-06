@@ -22,7 +22,7 @@ VALIDATE(){
     fi
 }
 
-if [ $ID -ne 0 ]
+if [ $ID -ne 0 ] &>> $LOGFILE
 then
     echo -e "$R ERROR:: Please run this script with root access $N"
     exit 1 # you can give other than 0
@@ -31,26 +31,26 @@ else
 fi # fi means reverse of if, indicating condition end
 
 
-dnf install https://rpms.remirepo.net/enterprise/remi-release-8.rpm -y
+dnf install https://rpms.remirepo.net/enterprise/remi-release-8.rpm -y &>> $LOGFILE
 
 VALIDATE $? "Installing Remi release"
 
-dnf module enable redis:remi-6.2 -y
+dnf module enable redis:remi-6.2 -y &>> $LOGFILE
 
 VALIDATE $? "enabling redis"
 
-dnf install redis -y
+dnf install redis -y &>> $LOGFILE
 
 VALIDATE $? "Installing Redis"
 
-sed -i 's/127.0.0.1/0.0.0.0/g' /etc/redis/redis.conf
+sed -i 's/127.0.0.1/0.0.0.0/g' /etc/redis/redis.conf &>> $LOGFILE
 
 VALIDATE $? "allowing remote connections"
 
-systemctl enable redis
+systemctl enable redis &>> $LOGFILE
 
 VALIDATE $? "Enabled Redis"
 
-systemctl start redis
+systemctl start redis &>> $LOGFILE
 
 VALIDATE $? "Started Redis"
