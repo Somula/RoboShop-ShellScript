@@ -17,7 +17,7 @@ LOGFILE="/tmp/$0-$TIMESTAMP.log"
 echo "script started executing at $TIMESTAMP" &>> $LOGFILE
 
 VALIDATE(){
-    if[ $1 -ne 0 ]
+    if [ $1 -ne 0 ]
     then 
         echo -e "$2 ... $R FAILED $N"
         exit 1
@@ -27,7 +27,7 @@ VALIDATE(){
 }
 
 
-if[ $ID -ne 0]
+if [ $ID -ne 0 ]
 then
     echo -e "$R Please run the script with root access. $N"
     exit 1
@@ -48,7 +48,7 @@ dnf install nodejs -y &>> $LOGFILE
 VALIDATE $? "Installing nodejs"
 
 id roboshop   &>> $LOGFILE
-if[ $? -ne 0 ]
+if [ $? -ne 0 ]
 then 
     useradd roboshop
     VALIDATE $? "roboshop user creation"
