@@ -72,7 +72,7 @@ unzip -o /tmp/catalogue.zip  &>> $LOGFILE
 
 VALIDATE $? "unzipping the application"
 
-cp C:\Users\ganes\Devops\Repo\RoboShop-ShellScript/catalogue.service /etc/systemd/system/catalogue.service &>> $LOGFILE
+cp /home/centos/roboshop-shell/catalogue.service /etc/systemd/system/catalogue.service &>> $LOGFILE
 
 VALIDATE $? "Copying the catalogue service file"
 
