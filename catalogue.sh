@@ -72,7 +72,7 @@ unzip -o /tmp/catalogue.zip  &>> $LOGFILE
 
 VALIDATE $? "unzipping the application"
 
-cp /home/centos/roboshop-shell/catalogue.service /etc/systemd/system/catalogue.service &>> $LOGFILE
+cp /home/centos/RoboShop-ShellScript/catalogue.service /etc/systemd/system/catalogue.service &>> $LOGFILE
 
 VALIDATE $? "Copying the catalogue service file"
 
@@ -88,7 +88,7 @@ systemctl start catalogue  &>> $LOGFILE
 
 VALIDATE $? "starting catalogue service"
 
-cp C:\Users\ganes\Devops\Repo\RoboShop-ShellScript/mongo.repo /etc/yum.repos.d/mongo.repo  &>> $LOGFILE
+cp /home/centos/RoboShop-ShellScript/mongo.repo /etc/yum.repos.d/mongo.repo  &>> $LOGFILE
 
 VALIDATE $? "copying mongobd repo"
 
