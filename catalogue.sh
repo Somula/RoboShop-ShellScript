@@ -8,7 +8,7 @@ R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
-MONGDB_HOST=mongodb.daws76s.online
+MONGDB_HOST=mongodb.lingaaws.tech
 
 TIMESTAMP=$(date +%F-%H-%M-%S)
 LOGFILE="/tmp/$0-$TIMESTAMP.log"
@@ -92,7 +92,7 @@ cp /home/centos/RoboShop-ShellScript/mongo.repo /etc/yum.repos.d/mongo.repo  &>>
 
 VALIDATE $? "copying mongobd repo"
 
-dnf install mongodb-org-shell  &>> $LOGFILE
+dnf install mongodb-org-shell -y  &>> $LOGFILE
 
 VALIDATE $? "Installing mongodb client"
 
