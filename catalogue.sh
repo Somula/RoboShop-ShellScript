@@ -100,4 +100,6 @@ mongo --host $MONGO_HOST </app/schema/catalogue.js  &>> $LOGFILE
 
 VALIDATE $? "Loading catalouge data into MongoDB"
 
+systemctl start catalogue  &>> $LOGFILE
 
+VALIDATE $? "restarting catalogue service"
