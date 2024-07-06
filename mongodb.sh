@@ -24,11 +24,11 @@ VALIDATE(){
 
 
 if[ $ID -ne 0]
-then
-    echo -e "$R Please run the script with root access. $N"
-    exit 1
-else
-    echo -e "$G You are Root User. $N"
+    then
+        echo -e "$R Please run the script with root access. $N"
+        exit 1
+    else
+        echo -e "$G You are Root User. $N"
 fi
 
 cp mongo.repo /etc/yum.repos.d/mongo.repo &>> $LOGFILE
